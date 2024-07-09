@@ -77,7 +77,7 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 #### Constructor
 - **BigTwoClient(BigTwo game, BigTwoGUI gui)**: Creates a Big Two client with references to the game and GUI objects.
 
-### Instance Variables
+#### Instance Variables
 - **BigTwo game**: The Big Two card game object.
 - **BigTwoGUI gui**: The GUI object for the Big Two card game.
 - **Socket sock**: The socket connection to the game server.
