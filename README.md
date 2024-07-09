@@ -1,35 +1,74 @@
 # Java-Big-Two-Game-OOP-Project
+------
 
-This repo contains my school project to COMP2396. 
 
-Project Overview
-This project demonstrates advanced concepts in networking and multi-threading using Java. The goal is to enhance the Big Two card game to support four players over the internet. This involves creating a robust client-server architecture and ensuring seamless communication between clients and the server.
+Author: Lo Lok Fung
 
-Specifications
-Behavior of the Game Server
-Player Connection: Upon a successful connection, the server sends a PLAYER_LIST message to the new client, specifying the playerID and the names of existing players.
-Server Full: If the server is full, it sends a FULL message and closes the connection.
-Connection Loss: When a client disconnects, the server broadcasts a QUIT message to all clients.
-Message Handling: The server processes messages from clients, replacing the playerID with the correct value based on the socket connection.
-Game Start: When all clients are ready, the server broadcasts a START message with a shuffled deck.
-Chat Messages: The server broadcasts chat messages from clients to all other clients.
-Behavior of the Game Client
-User Prompt: The client prompts the user to enter their name and connects to the server.
-Player List Update: Upon receiving a PLAYER_LIST message, the client updates the player list and sends a JOIN message to the server.
-Game Start: The client starts a new game upon receiving a START message with the given deck.
-Move Handling: The client sends a MOVE message when the local player makes a move and processes incoming MOVE messages from the server.
-Chat Functionality: The client sends and displays chat messages.
-BigTwoClient Class
-Constructor: Initializes the client with references to the game and GUI objects.
-Instance Variables: Includes references to the game, GUI, socket connection, output stream, playerID, playerName, serverIP, and serverPort.
-NetworkGame Interface Methods:
-getPlayerID(), setPlayerID(int playerID)
-getPlayerName(), setPlayerName(String playerName)
-getServerIP(), setServerIP(String serverIP)
-getServerPort(), setServerPort(int serverPort)
-connect(): Establishes a socket connection and creates a thread for receiving messages.
-parseMessage(GameMessage message): Parses messages from the server.
-sendMessage(GameMessage message): Sends messages to the server.
-ServerHandler Inner Class: Implements Runnable to handle incoming messages in a separate thread.
-Graphical User Interface
-Connect Menu Item: Replaces the “Restart” menu item to establish a connection to the game server.
+This repository contains my school project for COMP2396. The project is a Java implementation of the Big Two card game, showcasing Object-Oriented Programming (OOP) principles.
+
+## Table of Contents
+- Introduction
+- Features
+- Class Structure
+- Game Rules
+- Installation
+- Usage
+- Contributing
+- License
+
+## Introduction
+The Big Two game is a popular card game in East Asia. This project demonstrates my understanding of OOP concepts by implementing the game in Java. The project includes various classes and methods to handle the game's logic, user interface, and interactions.
+
+## Features
+- **Graphical User Interface (GUI)**: A user-friendly interface to play the game.
+- **Multiplayer Support**: Play against AI or other players.
+- **Robust Game Logic**: Handles all game rules and edge cases.
+- **Extensible Design**: Easy to add new features or modify existing ones.
+
+## Class Structure
+### Main Classes
+- **BigTwo**: The main class that initializes and starts the game.
+- **BigTwoDeck**: Manages the deck of cards.
+- **BigTwoCard**: Represents a single card in the game.
+- **BigTwoPlayer**: Represents a player in the game.
+- **BigTwoTable**: Manages the game table and user interface.
+
+### Supporting Classes
+- **CardGame**: An interface for card games.
+- **CardGamePlayer**: An interface for card game players.
+- **Deck**: An interface for card decks.
+- **Hand**: Represents a hand of cards.
+- **Card**: Represents a generic card.
+
+## Game Rules
+- **Objective**: Be the first to play all your cards.
+- **Card Ranking**: Cards are ranked by their number and suit.
+- **Valid Hands**: Single, Pair, Triple, Straight, Flush, Full House, Four of a Kind, Straight Flush.
+- **Gameplay**: Players take turns to play a higher-ranked hand or pass.
+
+## Installation
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/xxXLokiXxx/Java-Big-Two-Game-OOP-Project.git
+    ```
+2. **Navigate to the project directory**:
+    ```bash
+    cd Java-Big-Two-Game-OOP-Project
+    ```
+3. **Compile the project**:
+    ```bash
+    javac *.java
+    ```
+
+## Usage
+1. **Run the game**:
+    ```bash
+    java BigTwo
+    ```
+2. **Follow the on-screen instructions to play the game**.
+
+## Contributing
+Contributions are welcome! Please fork this repository and submit a pull request.
+
+## License
+This project is licensed under the MIT License.
