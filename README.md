@@ -46,6 +46,66 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 - **Valid Hands**: Single, Pair, Triple, Straight, Flush, Full House, Four of a Kind, Straight Flush.
 - **Gameplay**: Players take turns to play a higher-ranked hand or pass.
 
+# Specifications
+
+## Behavior of the Game Server
+- **Player List**: Upon a successful connection, the server sends a PLAYER_LIST message to the client, specifying the playerID and the names of existing players.
+- **Full Server**: If the server is full, it sends a FULL message to the client and closes the connection.
+- **Connection Lost**: When a connection is lost, the server broadcasts a QUIT message to all clients.
+- **Message Handling**: The server replaces the playerID in incoming messages with the correct value based on the socket connection.
+- **Join**: Upon receiving a JOIN message, the server broadcasts it to all clients.
+- **Ready**: Upon receiving a READY message, the server broadcasts it to all clients.
+- **Start**: When all clients are ready, the server broadcasts a START message with a shuffled deck.
+- **Chat**: Upon receiving a MSG message, the server broadcasts it to all clients.
+- **Move**: Upon receiving a MOVE message, the server broadcasts it to all clients.
+
+## Behavior of the Client
+- **Startup**: Prompts the user to enter their name and connects to the game server.
+- **Player List**: Updates the player list upon receiving a PLAYER_LIST message.
+- **Join**: Sends a JOIN message to the server after updating the player list.
+- **Full Server**: Displays a message if the server is full.
+- **Connection Lost**: Removes a player from the game and stops the game if a connection is lost.
+- **Ready**: Displays a message when a player is ready.
+- **Start**: Starts a new game with the given deck upon receiving a START message.
+- **Move**: Sends a MOVE message when the local player makes a move.
+- **Chat**: Sends a MSG message when the local player sends a chat message.
+- **Game End**: Displays the game results and sends a READY message when the game ends.
+- **Connect**: Establishes a connection to the server when the user selects “Connect” from the menu.
+- **Quit**: Closes the window and terminates the client when the user selects “Quit” from the menu.
+
+## BigTwoClient Class
+### Constructor
+- **BigTwoClient(BigTwo game, BigTwoGUI gui)**: Creates a Big Two client with references to the game and GUI objects.
+
+### Instance Variables
+- **BigTwo game**: The Big Two card game object.
+- **BigTwoGUI gui**: The GUI object for the Big Two card game.
+- **Socket sock**: The socket connection to the game server.
+- **ObjectOutputStream oos**: The output stream for sending messages to the server.
+- **int playerID**: The playerID of the local player.
+- **String playerName**: The name of the local player.
+- **String serverIP**: The IP address of the game server.
+- **int serverPort**: The TCP port of the game server.
+
+### NetworkGame Interface Methods
+- **int getPlayerID()**: Gets the playerID of the local player.
+- **void setPlayerID(int playerID)**: Sets the playerID of the local player.
+- **String getPlayerName()**: Gets the name of the local player.
+- **void setPlayerName(String playerName)**: Sets the name of the local player.
+- **String getServerIP()**: Gets the IP address of the game server.
+- **void setServerIP(String serverIP)**: Sets the IP address of the game server.
+- **int getServerPort()**: Gets the TCP port of the game server.
+- **void setServerPort(int serverPort)**: Sets the TCP port of the game server.
+- **void connect()**: Establishes a socket connection with the game server.
+- **void parseMessage(GameMessage message)**: Parses messages received from the game server.
+- **void sendMessage(GameMessage message)**: Sends a message to the game server.
+
+### Inner Class
+- **ServerHandler**: Implements the Runnable interface. The run() method handles receiving messages from the game server and calls parseMessage() to process them.
+
+## Graphical User Interface
+- **Connect Menu Item**: Replaces the “Restart” menu item with a “Connect” menu item for establishing a connection to the game server.
+
 ## Installation
 1. **Clone the repository**:
     ```bash
