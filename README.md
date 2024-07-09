@@ -5,6 +5,7 @@
 Author: Lo Lok Fung
 
 This repository contains my school project for COMP2396. The project is a Java implementation of the Big Two card game, showcasing Object-Oriented Programming (OOP) principles.
+![Screenshot 2024-07-10 002230](https://github.com/xxXLokiXxx/Java-Big-Two-Game-OOP-Project/assets/99037815/6e0145d0-3524-45f2-84bf-615cb3f0c0bd)
 
 ## Table of Contents
 - Introduction
@@ -12,7 +13,6 @@ This repository contains my school project for COMP2396. The project is a Java i
 - Class Structure
 - Game Rules
 - Installation
-- Usage
 - Contributing
 - License
 
@@ -106,26 +106,7 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 ### Graphical User Interface
 - **Connect Menu Item**: Replaces the “Restart” menu item with a “Connect” menu item for establishing a connection to the game server.
 
-## Installation
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/xxXLokiXxx/Java-Big-Two-Game-OOP-Project.git
-    ```
-2. **Navigate to the project directory**:
-    ```bash
-    cd Java-Big-Two-Game-OOP-Project
-    ```
-3. **Compile the project**:
-    ```bash
-    javac *.java
-    ```
 
-## Usage
-1. **Run the game**:
-    ```bash
-    java BigTwo
-    ```
-2. **Follow the on-screen instructions to play the game**.
 
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request.
