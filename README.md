@@ -6,21 +6,21 @@ Author: Lo Lok Fung
 
 This repository contains my school project for COMP2396. The project is a Java implementation of the Big Two card game, showcasing Object-Oriented Programming (OOP) principles.
 
+![Screenshot 2024-07-10 002230](https://github.com/xxXLokiXxx/Java-Big-Two-Game-OOP-Project/assets/99037815/1601143c-5a25-4909-af73-23722aa30bd8)
 
 ## Table of Contents
 - Introduction
 - Features
 - Class Structure
 - Game Rules
-- Installation
+- Specifications
 - Contributing
 - License
 
 ## Introduction
 The Big Two game is a popular card game in East Asia. This project demonstrates my understanding of OOP concepts by implementing the game in Java. The project includes various classes and methods to handle the game's logic, user interface, and interactions.
 
-Here is a screenshot of the final version shown as below.
-![Screenshot 2024-07-10 002230](https://github.com/xxXLokiXxx/Java-Big-Two-Game-OOP-Project/assets/99037815/1601143c-5a25-4909-af73-23722aa30bd8)
+A picture of 4 players playing big two:
 ![Screenshot 2024-07-10 002447](https://github.com/xxXLokiXxx/Java-Big-Two-Game-OOP-Project/assets/99037815/f0f9df92-76d1-487f-b23e-ad64d2ca884d)
 
 ## Features
