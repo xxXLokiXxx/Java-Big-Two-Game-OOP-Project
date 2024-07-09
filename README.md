@@ -46,9 +46,9 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 - **Valid Hands**: Single, Pair, Triple, Straight, Flush, Full House, Four of a Kind, Straight Flush.
 - **Gameplay**: Players take turns to play a higher-ranked hand or pass.
 
-# Specifications
+## Specifications
 
-## Behavior of the Game Server
+### Behavior of the Game Server
 - **Player List**: Upon a successful connection, the server sends a PLAYER_LIST message to the client, specifying the playerID and the names of existing players.
 - **Full Server**: If the server is full, it sends a FULL message to the client and closes the connection.
 - **Connection Lost**: When a connection is lost, the server broadcasts a QUIT message to all clients.
@@ -59,7 +59,7 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 - **Chat**: Upon receiving a MSG message, the server broadcasts it to all clients.
 - **Move**: Upon receiving a MOVE message, the server broadcasts it to all clients.
 
-## Behavior of the Client
+### Behavior of the Client
 - **Startup**: Prompts the user to enter their name and connects to the game server.
 - **Player List**: Updates the player list upon receiving a PLAYER_LIST message.
 - **Join**: Sends a JOIN message to the server after updating the player list.
@@ -73,8 +73,8 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 - **Connect**: Establishes a connection to the server when the user selects “Connect” from the menu.
 - **Quit**: Closes the window and terminates the client when the user selects “Quit” from the menu.
 
-## BigTwoClient Class
-### Constructor
+### BigTwoClient Class
+#### Constructor
 - **BigTwoClient(BigTwo game, BigTwoGUI gui)**: Creates a Big Two client with references to the game and GUI objects.
 
 ### Instance Variables
@@ -87,7 +87,7 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 - **String serverIP**: The IP address of the game server.
 - **int serverPort**: The TCP port of the game server.
 
-### NetworkGame Interface Methods
+#### NetworkGame Interface Methods
 - **int getPlayerID()**: Gets the playerID of the local player.
 - **void setPlayerID(int playerID)**: Sets the playerID of the local player.
 - **String getPlayerName()**: Gets the name of the local player.
@@ -100,10 +100,10 @@ The Big Two game is a popular card game in East Asia. This project demonstrates 
 - **void parseMessage(GameMessage message)**: Parses messages received from the game server.
 - **void sendMessage(GameMessage message)**: Sends a message to the game server.
 
-### Inner Class
+#### Inner Class
 - **ServerHandler**: Implements the Runnable interface. The run() method handles receiving messages from the game server and calls parseMessage() to process them.
 
-## Graphical User Interface
+### Graphical User Interface
 - **Connect Menu Item**: Replaces the “Restart” menu item with a “Connect” menu item for establishing a connection to the game server.
 
 ## Installation
